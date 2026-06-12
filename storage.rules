@@ -1,0 +1,10 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Order files — only uploader or admin
+    match /orders/{orderNumber}/{fileName} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.resource.size < 50 * 1024 * 1024; // 50MB max
+    }
+  }
+}
