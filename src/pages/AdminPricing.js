@@ -82,7 +82,7 @@ export default function AdminPricing() {
   return (
     <div>
       <div className="page-header">
-        <h2>가격 설정</html2>
+        <h2>가격 설정</h2>
         <p>거래처별 제품 단가 설정 (JPY 기준)</p>
       </div>
 
